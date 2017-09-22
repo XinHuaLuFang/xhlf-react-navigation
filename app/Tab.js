@@ -11,10 +11,18 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const NavScreen = ({ navigation, content }) => (
   <ScrollView style={styles.container}>
-    <Text>{content}</Text>
+    <Text style={styles.text}>{content}</Text>
     <Button
       title="切换到Home"
       onPress={() => navigation.navigate('Home')}
+    />
+    <Button
+      title="切换到People"
+      onPress={() => navigation.navigate('People')}
+    />
+    <Button
+      title="切换到Chat"
+      onPress={() => navigation.navigate('Chat')}
     />
     <Button
       title="切换到Settings"
@@ -31,10 +39,10 @@ const HomeScreen = ({ navigation }) => (
   <NavScreen content="Home Tab" navigation={navigation} />
 );
 HomeScreen.navigationOptions = {
-  tabBarLabel: 'Home',
+  tabBarLabel: 'Homae',
   tabBarIcon: ({ tintColor, focused }) => (
     <Ionicons
-      name={focused ? 'ios-people' : 'ios-people-outline'}
+      name={focused ? 'ios-home' : 'ios-home-outline'}
       size={26}
       style={{ color: tintColor }}
     />
@@ -42,7 +50,7 @@ HomeScreen.navigationOptions = {
 };
 
 const PeopleScreen = ({ navigation }) => (
-  <NavScreen content="People Tba" navigation={navigation} />
+  <NavScreen content="People Tab" navigation={navigation} />
 );
 PeopleScreen.navigationOptions = {
   tabBarLabel: 'People',
@@ -55,9 +63,39 @@ PeopleScreen.navigationOptions = {
   )
 };
 
+const ChatScreen = ({ navigation }) => (
+  <NavScreen content="Chat Tab" navigation={navigation} />
+);
+ChatScreen.navigationOptions = {
+  tabBarLabel: 'Chat',
+  tabBarIcon: ({ tintColor, focused }) => (
+    <Ionicons
+      name={focused ? 'ios-chatboxes' : 'ios-chatboxes-outline'}
+      size={26}
+      style={{ color: tintColor }}
+    />
+  )
+};
+
+const SettingsScreen = ({ navigation }) => (
+  <NavScreen content="Settings Tab" navigation={navigation} />
+);
+SettingsScreen.navigationOptions = {
+  tabBarLabel: 'Settings',
+  tabBarIcon: ({ tintColor, focused }) => (
+    <Ionicons
+      name={focused ? 'ios-settings' : 'ios-settings-outline'}
+      size={26}
+      style={{ color: tintColor }}
+    />
+  )
+};
+
 const Tab = TabNavigator({
   Home: { screen: HomeScreen },
-  People: { screen: PeopleScreen }
+  People: { screen: PeopleScreen },
+  Chat: { screen: ChatScreen },
+  Settings: { screen: SettingsScreen }
 }, {
   tabBarPosition: 'bottom',
   tabBarOptions: {
@@ -68,6 +106,12 @@ const Tab = TabNavigator({
 const styles = StyleSheet.create({
   container: {
     marginTop: Platform.OS === 'ios' ? 20 : 0
+  },
+  text: {
+    height: 120,
+    lineHeight: 75,
+    fontSize: 30,
+    textAlign: 'center'
   }
 });
 
