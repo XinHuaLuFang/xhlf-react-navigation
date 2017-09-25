@@ -3,7 +3,8 @@ import {
   AppRegistry
 } from 'react-native';
 
-import Stack from './app/Stack'
-import Tab from './app/Tab'
+import Stack from './app/Stack';
+import Tab from './app/Tab';
+import Drawer from './app/Drawer';
 
-AppRegistry.registerComponent('xhlfReactNavigation', () => Tab);
+AppRegistry.registerComponent('xhlfReactNavigation', () => Drawer);
