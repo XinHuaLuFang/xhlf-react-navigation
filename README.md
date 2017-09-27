@@ -4,3 +4,5 @@
 | 初始化项目 | |
 | StackNavigator| app/Stack.js |
 | TabNavigator | app/Tab.js |
+| DrawerNavigator | app/Drawer.js |
+| StacksInTabs | app/StacksInTabs.js |
