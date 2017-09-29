@@ -39,7 +39,7 @@ const HomeScreen = ({ navigation }) => (
   <NavScreen content="Home Tab" navigation={navigation} />
 );
 HomeScreen.navigationOptions = {
-  tabBarLabel: 'Homae',
+  tabBarLabel: 'Home',
   tabBarIcon: ({ tintColor, focused }) => (
     <Ionicons
       name={focused ? 'ios-home' : 'ios-home-outline'}
@@ -99,7 +99,8 @@ const Tab = TabNavigator({
 }, {
   tabBarPosition: 'bottom',
   tabBarOptions: {
-    showIcon: true
+    showIcon: true,
+    upperCaseLabel: false
   }
 });
 
